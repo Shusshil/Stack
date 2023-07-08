@@ -1,0 +1,24 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    String s = "{()}[]";
+		System.out.println(isBalanced(s));
+	}
+	public static boolean isBalanced(String s){
+	    int n = s.length();
+	    int[] stack = new int[n];
+	    int i = -1;
+	    int j = 0;
+	    while(j < n){
+            char ch = s.charAt(j);
+            if(ch == '[' || ch == '{' || ch == '('){
+                stack[++i] = ch;
+            }
+            else if(i >=0 && ((stack[i] == '[' && ch == ']') || (stack[i] == '{' && ch == '}') || (stack[i] == '(' && ch == ')'))){
+                i--;
+            }
+            j++;
+	    }
+	    return (i == -1);
+	}
+}
