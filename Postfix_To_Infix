@@ -10,7 +10,6 @@ public class Main
 	public static String PostfixToInfix(String s){
 	    Stack<String> st = new Stack<String>();
 	    int n = s.length();
-	    String res = "";
 	    for(int i=0; i<n; i++){
 	        char ch = s.charAt(i);
 	        if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')){
